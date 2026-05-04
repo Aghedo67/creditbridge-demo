@@ -19,12 +19,6 @@ def render():
         sme_df, features_df, monthly_df = generate_dataset()
 
     merged = features_df.merge(sme_df[["sme_id","archetype"]], on="sme_id")
-def hex_to_rgba(hex_color, alpha=0.12):
-    hex_color = hex_color.lstrip("#")
-    r = int(hex_color[0:2], 16)
-    g = int(hex_color[2:4], 16)
-    b = int(hex_color[4:6], 16)
-    return f"rgba({r},{g},{b},{alpha})"
     
     # ── Performance metrics ───────────────────────────────────────────────────
     st.markdown("##### Model Performance — Industry Benchmarks")
