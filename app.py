@@ -57,15 +57,31 @@ with st.sidebar:
     """, unsafe_allow_html=True)
 
 # ── Route ─────────────────────────────────────────────────────────────────────
-if   page == "🏠  Home":
-    from pages.home           import render
-elif page == "🎯  Score an SME":
-    from pages.scorer         import render
-elif page == "📊  Data Explorer":
-    from pages.explorer       import render
-elif page == "🤖  Model Insights":
-    from pages.model_insights import render
-elif page == "📖  API Reference":
-    from pages.api_docs       import render
+page_render = None
 
-render()
+if page == "🏠  Home":
+    from pages.home import render as page_render
+elif page == "🎯  Score an SME":
+    from pages.scorer import render as page_render
+elif page == "📊  Data Explorer":
+    from pages.explorer import render as page_render
+elif page == "🤖  Model Insights":
+    from pages.model_insights import render as page_render
+elif page == "📖  API Reference":
+    from pages.api_docs import render as page_render
+
+page_render()
+
+
+#if   page == "🏠  Home":
+   # from pages.home           import render
+#elif page == "🎯  Score an SME":
+   # from pages.scorer         import render
+#elif page == "📊  Data Explorer":
+    #from pages.explorer       import render
+#elif page == "🤖  Model Insights":
+   # from pages.model_insights import render
+#elif page == "📖  API Reference":
+ #   from pages.api_docs       import render
+
+#render()
