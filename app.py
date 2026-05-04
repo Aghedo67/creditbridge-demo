@@ -62,7 +62,7 @@ if   page == "🏠  Home":
 elif page == "🎯  Score an SME":
     from pages.scorer         import render
 elif page == "📊  Data Explorer":
-    from pages.explorer       import pages.explorer
+    from pages.explorer       import render
 elif page == "🤖  Model Insights":
     from pages.model_insights import render
 elif page == "📖  API Reference":
