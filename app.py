@@ -59,28 +59,14 @@ with st.sidebar:
 # ── Route ─────────────────────────────────────────────────────────────────────
 
 if   page == "🏠  Home":
-    from pages.home import render
+    from pages.home           import render
 elif page == "🎯  Score an SME":
-    from pages.scorer import render
+    from pages.scorer         import render
 elif page == "📊  Data Explorer":
-    from pages.explorer import render
+    from pages.explorer       import render
 elif page == "🤖  Model Insights":
     from pages.model_insights import render
 elif page == "📖  API Reference":
-    from pages.api_docs import render
+    from pages.api_docs       import render
 
-
-
-
-#if   page == "🏠  Home":
-   # from pages.home           import render
-#elif page == "🎯  Score an SME":
-   # from pages.scorer         import render
-#elif page == "📊  Data Explorer":
-    #from pages.explorer       import render
-#elif page == "🤖  Model Insights":
-   # from pages.model_insights import render
-#elif page == "📖  API Reference":
- #   from pages.api_docs       import render
-
-#render()
+render()
