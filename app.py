@@ -57,6 +57,7 @@ with st.sidebar:
     """, unsafe_allow_html=True)
 
 # ── Route ─────────────────────────────────────────────────────────────────────
+
 if   page == "🏠  Home":
     from pages.home import render
 elif page == "🎯  Score an SME":
@@ -67,6 +68,10 @@ elif page == "🤖  Model Insights":
     from pages.model_insights import render
 elif page == "📖  API Reference":
     from pages.api_docs import render
+
+
+
+
 #if   page == "🏠  Home":
    # from pages.home           import render
 #elif page == "🎯  Score an SME":
