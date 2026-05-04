@@ -20,6 +20,14 @@ def render():
 
     merged = features_df.merge(sme_df[["sme_id","archetype"]], on="sme_id")
 
+def hex_to_rgba(hex_color, alpha=0.12):
+    hex_color = hex_color.lstrip("#")
+    r = int(hex_color[0:2], 16)
+    g = int(hex_color[2:4], 16)
+    b = int(hex_color[4:6], 16)
+    return f"rgba({r},{g},{b},{alpha})"
+    
+    
     # ── Performance metrics ───────────────────────────────────────────────────
     st.markdown("##### Model Performance — Industry Benchmarks")
     m1,m2,m3,m4 = st.columns(4)
@@ -159,7 +167,8 @@ def render():
             name=TIER_LABELS[tier],
             line=dict(color=COLOURS[tier], width=2.5),
             fill="toself",
-            fillcolor=COLOURS[tier] + "20",
+            fillcolor=hex_to_rgba(COLOURS[tier], 0.12),
+            #fillcolor=COLOURS[tier] + "20",
             hovertemplate=f"<b>{TIER_LABELS[tier]}</b><br>%{{theta}}: %{{r:.2f}}<extra></extra>",
         ))
 
