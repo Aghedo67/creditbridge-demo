@@ -2,6 +2,7 @@
 import streamlit as st
 import sys
 import os
+import pages.explorer
 
 # ── Fix import path for Streamlit Cloud ──────────────────────────────────────
 # On Streamlit Cloud the working directory is the repo root.
