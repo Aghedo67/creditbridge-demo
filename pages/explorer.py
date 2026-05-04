@@ -18,7 +18,13 @@ def render():
     with st.spinner("Loading dataset..."):
         sme_df, features_df, monthly_df = generate_dataset()
 
-    merged = features_df.merge(sme_df[["sme_id","archetype","state","platform"]], on="sme_id")
+    #merged = features_df.merge(sme_df[["sme_id","archetype","state","platform"]], on="sme_id")
+    features_df = features_df.drop(columns=["archetype"], errors="ignore")
+
+merged = features_df.merge(
+    sme_df[["sme_id", "archetype", "state", "platform"]],
+    on="sme_id"
+)
 
     # ── Filters ───────────────────────────────────────────────────────────────
     with st.expander("🔽 Filter Dataset", expanded=False):
